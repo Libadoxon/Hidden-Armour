@@ -1,0 +1,15 @@
+{
+  "category.hiddenarmour": "Hidden Armour",
+  "key.hiddenarmour.toggle": "Toggle Armour Visibility",
+  "key.hiddenarmour.enable": "Enable Hidden Armour",
+  "key.hiddenarmour.disable": "Disable Hidden Armour",
+
+  "key.hiddenarmour.openGui": "Open Hidden Armour Settings",
+  "screen.hiddenarmour.title": "Hidden Armour Settings",
+
+  "button.hiddenarmour.toggleArmour.enabled": "Armor Hidden: ON",
+  "button.hiddenarmour.toggleArmour.disabled": "Armor Hidden: OFF",
+
+  "button.hiddenarmour.toggleElytra.enabled": "Elytra Hidden: ON",
+  "button.hiddenarmour.toggleElytra.disabled": "Elytra Hidden: OFF"
+}

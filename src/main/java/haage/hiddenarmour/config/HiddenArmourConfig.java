@@ -22,6 +22,7 @@ public class HiddenArmourConfig {
     // The settings to persist
     public boolean hideArmour = false;
     public boolean includeElytra = false;
+    public boolean hideHorseArmor = false;  // ◀ new flag
 
     // Singleton instance
     private static HiddenArmourConfig instance;

@@ -7,9 +7,12 @@
   "key.hiddenarmour.openGui": "Open Hidden Armour Settings",
   "screen.hiddenarmour.title": "Hidden Armour Settings",
 
-  "button.hiddenarmour.toggleArmour.enabled": "Armor Hidden: ON",
-  "button.hiddenarmour.toggleArmour.disabled": "Armor Hidden: OFF",
+  "button.hiddenarmour.toggleArmour.enabled":  "Armour: Hidden",
+  "button.hiddenarmour.toggleArmour.disabled": "Armour: Shown",
 
-  "button.hiddenarmour.toggleElytra.enabled": "Elytra Hidden: ON",
-  "button.hiddenarmour.toggleElytra.disabled": "Elytra Hidden: OFF"
+  "button.hiddenarmour.toggleElytra.enabled":  "Elytra included: On",
+  "button.hiddenarmour.toggleElytra.disabled": "Elytra included: Off",
+
+  "button.hiddenarmour.toggleHorseArmor.enabled":  "Horse equipment: Hidden",
+  "button.hiddenarmour.toggleHorseArmor.disabled": "Horse equipment: Shown"
 }

@@ -1,10 +1,12 @@
 {
 	"required": true,
+	"minVersion": "0.8",
 	"package": "haage.hiddenarmour.mixin",
-	"compatibilityLevel": "JAVA_21",
+	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"ArmorFeatureRendererMixin",
-		"ElytraFeatureRendererMixin"
+		"ElytraFeatureRendererMixin",
+		"SaddleFeatureRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

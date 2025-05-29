@@ -1,59 +1,57 @@
 package haage.hiddenarmour;
 
-import net.fabricmc.api.ClientModInitializer;
+import haage.hiddenarmour.client.HiddenArmourScreen;
 import haage.hiddenarmour.config.HiddenArmourConfig;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 
-import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.text.Text;
 
 import org.lwjgl.glfw.GLFW;
 
-// import our new screen
-import haage.hiddenarmour.client.HiddenArmourScreen;
-
 public class HiddenArmourClient implements ClientModInitializer {
-    private static KeyBinding toggleArmorKey;
-    private static KeyBinding openGuiKey;
+    private KeyBinding toggleArmorKey;
+    private KeyBinding openGuiKey;
 
     @Override
     public void onInitializeClient() {
-        // Load (or create) config
+        // Ensure config is loaded
         HiddenArmourConfig.get();
 
-        // Register “J” to toggle armour visibility
+        // Toggle all armour with J
         toggleArmorKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.hiddenarmour.toggle",   // translation key
-                GLFW.GLFW_KEY_J,             // default: J
-                "category.hiddenarmour"      // translation key for key-bind category
-        ));
-
-        // Register “U” to open the settings screen
-        openGuiKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.hiddenarmour.openGui",  // translation key
-                GLFW.GLFW_KEY_U,             // default: U
+                "key.hiddenarmour.toggle",
+                GLFW.GLFW_KEY_J,
                 "category.hiddenarmour"
         ));
 
-        // Each client tick, check for presses
+        // Open GUI with U
+        openGuiKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.hiddenarmour.openGui",
+                GLFW.GLFW_KEY_U,
+                "category.hiddenarmour"
+        ));
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            // Toggle armour hide
+            // Toggle global hideArmour
             while (toggleArmorKey.wasPressed()) {
-                boolean newState = !HiddenArmourConfig.get().hideArmour;
-                HiddenArmourConfig.get().hideArmour = newState;
+                HiddenArmourConfig cfg = HiddenArmourConfig.get();
+                cfg.hideArmour = !cfg.hideArmour;
                 HiddenArmourConfig.save();
                 client.player.sendMessage(
-                        Text.literal("Armor hidden: " + newState),
+                        Text.literal("Armor hidden: " + cfg.hideArmour),
                         true
                 );
             }
 
             // Open the settings screen
             while (openGuiKey.wasPressed()) {
-                MinecraftClient.getInstance().setScreen(new HiddenArmourScreen());
+                MinecraftClient mc = MinecraftClient.getInstance();
+                mc.setScreen(new HiddenArmourScreen(mc.currentScreen));
             }
         });
     }

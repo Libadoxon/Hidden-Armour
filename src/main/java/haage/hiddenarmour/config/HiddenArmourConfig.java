@@ -19,27 +19,29 @@ public class HiddenArmourConfig {
             .setPrettyPrinting()
             .create();
 
-    // The settings to persist
-    public boolean hideArmour = false;
-    public boolean includeElytra = false;
-    public boolean hideHorseArmor = false;
-    public boolean hideEnchantmentGlint = false;
-    public boolean hideNameTags        = false;
+    // Global toggles
+    public boolean hideArmour            = false;
+    public boolean includeElytra         = false;
+    public boolean hideHorseArmor        = false;
+    public boolean hideEnchantmentGlint  = false;
+    public boolean hideNameTags          = false;
+
+    // Per-piece toggles
+    public boolean showHelmet     = false;
+    public boolean showChestplate = false;
+    public boolean showLeggings   = false;
+    public boolean showBoots      = false;
 
     // Singleton instance
     private static HiddenArmourConfig instance;
 
-    /**
-     * Gets the singleton, loading from disk if necessary.
-     */
+    /** Get (and lazy-load) the singleton config. */
     public static HiddenArmourConfig get() {
         if (instance == null) load();
         return instance;
     }
 
-    /**
-     * Loads the config from file or creates defaults if missing.
-     */
+    /** Load from disk or create defaults if missing. */
     public static void load() {
         try {
             if (Files.exists(CONFIG_PATH)) {
@@ -56,9 +58,7 @@ public class HiddenArmourConfig {
         }
     }
 
-    /**
-     * Saves the current config to disk.
-     */
+    /** Write current settings out to disk. */
     public static void save() {
         try {
             Files.createDirectories(CONFIG_PATH.getParent());
@@ -68,5 +68,35 @@ public class HiddenArmourConfig {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    // ---- Per-piece getters & setters ----
+
+    public boolean isShowHelmet() {
+        return showHelmet;
+    }
+    public void setShowHelmet(boolean showHelmet) {
+        this.showHelmet = showHelmet;
+    }
+
+    public boolean isShowChestplate() {
+        return showChestplate;
+    }
+    public void setShowChestplate(boolean showChestplate) {
+        this.showChestplate = showChestplate;
+    }
+
+    public boolean isShowLeggings() {
+        return showLeggings;
+    }
+    public void setShowLeggings(boolean showLeggings) {
+        this.showLeggings = showLeggings;
+    }
+
+    public boolean isShowBoots() {
+        return showBoots;
+    }
+    public void setShowBoots(boolean showBoots) {
+        this.showBoots = showBoots;
     }
 }

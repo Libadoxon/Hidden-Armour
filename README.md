@@ -17,10 +17,19 @@ Perfect for taking clean screenshots or just enjoying your favorite skins withou
 ## Key Features
 
 - 🔒 **Toggle Player Armor**  
-  Show or hide your own armor layers at the press of a button.
+  Show or hide armor rendering on players at the press of a button.
+
+- 👕 **Per piece toogles** <br>
+  Toggle what armour pieces that are hidden
 
 - 🪶 **Include/Exclude Elytra**  
-  Decide whether your Elytra is rendered alongside your armor.
+  Decide whether Elytra is rendered alongside armor.
+
+- ✨ **Disable Enchantment Glint**  
+  Toggle the enchantment glint effect on armor and tools.
+
+- 🏷️ **Hide Nametags**  
+  Toggle the visibility of nametags.
 
 - 🐴 **Horse Equipment Control**  
   Hide or reveal equipment on any horse.
@@ -29,7 +38,7 @@ Perfect for taking clean screenshots or just enjoying your favorite skins withou
   Heads, carved pumpkins, and other non-armor items will still render normally.
 
 - ⚙️ **In-Game Configuration**  
-  Accessible via hotkey or ModMenu. 
+  Accessible via hotkey or ModMenu.
 
 ## Controls & Commands
 
@@ -66,7 +75,7 @@ Show elytra hide status
 
 <div align="center" style="display: grid; grid-template-columns: repeat(2, auto); gap: 10px; justify-content: center; align-items: center;">
   <img
-    src="https://cdn.modrinth.com/data/cached_images/d0e99cf27b2d7ae3f0128a8203489d9859ab141f.png"
+    src="https://cdn.modrinth.com/data/cached_images/abd2b456d84ae14f7e4daec0bd5faf9aa00f59ef.png"
     alt="Settings"
     width="400"
     loading="lazy"
@@ -99,12 +108,14 @@ Show elytra hide status
 
 
 
+## To-Do
 
+> Add a transparency slider as an alternative to turning armour off completely.
 
-
-
+> Add wolf armour toggle.
 
 ## Dependencies
 
 - **Fabric API** (required)  
 - **ModMenu** (optional — Settings GUI accessible via the mods list)
+

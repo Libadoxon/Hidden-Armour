@@ -11,6 +11,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.text.Text;
 
+import net.minecraft.util.Formatting;
 import org.lwjgl.glfw.GLFW;
 
 public class HiddenArmourClient implements ClientModInitializer {
@@ -43,9 +44,12 @@ public class HiddenArmourClient implements ClientModInitializer {
                 cfg.hideArmour = !cfg.hideArmour;
                 HiddenArmourConfig.save();
                 client.player.sendMessage(
-                        Text.literal("Armor hidden: " + cfg.hideArmour),
+                        Text.literal("Armour: ")
+                                .append(Text.literal(cfg.hideArmour ? "Hidden" : "Shown")
+                                        .formatted(cfg.hideArmour ? Formatting.RED : Formatting.GREEN)),
                         true
                 );
+
             }
 
             // Open the settings screen

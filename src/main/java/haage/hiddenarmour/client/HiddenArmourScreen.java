@@ -356,7 +356,7 @@ public class HiddenArmourScreen extends Screen {
 
     private Text getElytraTextEmoji() {
         boolean shown = !HiddenArmourConfig.get().includeElytra;
-        MutableText txt = Text.literal("🪁: ");
+        MutableText txt = Text.literal("🕊: ");
         return txt.append(Text.literal(shown ? "❌" : "✔")
                 .formatted(shown ? Formatting.RED : Formatting.GREEN));
     }

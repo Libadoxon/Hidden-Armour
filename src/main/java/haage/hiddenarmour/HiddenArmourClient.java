@@ -46,7 +46,7 @@ public class HiddenArmourClient implements ClientModInitializer {
                 client.player.sendMessage(
                         Text.literal("Armour: ")
                                 .append(Text.literal(cfg.hideArmour ? "Hidden" : "Shown")
-                                        .formatted(cfg.hideArmour ? Formatting.RED : Formatting.GREEN)),
+                                        .formatted(cfg.hideArmour ? Formatting.GREEN : Formatting.RED)),
                         true
                 );
 

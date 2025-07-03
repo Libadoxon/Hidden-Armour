@@ -20,13 +20,13 @@ Perfect for taking clean screenshots or just enjoying your favorite skins withou
   Show or hide armor rendering on players at the press of a button.
 
 - 👕 **Per piece toogles** <br>
-  Toggle what armour pieces that are hidden
+  Toggle what armour pieces that are hidden.
 
 - 🪶 **Include/Exclude Elytra**  
   Decide whether Elytra is rendered alongside armor.
 
 - ✨ **Disable Enchantment Glint**  
-  Toggle the enchantment glint effect on armor and tools.
+  Toggle the enchantment glint effect on tools and 2D items.
 
 - 🏷️ **Hide Nametags**  
   Toggle the visibility of nametags.
@@ -114,8 +114,32 @@ Show elytra hide status
 
 > Add wolf armour toggle.
 
-## Dependencies
+---
 
-- **Fabric API** (required)  
-- **ModMenu** (optional — Settings GUI accessible via the mods list)
+## 🔗 Dependencies
+
+### Required
+
+<a href="https://modrinth.com/mod/fabric-api">
+  <img
+    src="https://cdn.modrinth.com/data/cached_images/b541ef52cf8c8e8d990ac261f745a0d405896096.png"
+    alt="Fabric API"
+    width="80"
+    loading="lazy"
+  />
+</a>
+
+### Optional (Recommended)
+
+<a href="https://modrinth.com/mod/modmenu">
+  <img
+    src="https://cdn.modrinth.com/data/cached_images/09f9500c73623d8ee3d3608dba843f86e94c1f5e_0.webp"
+    alt="Mod Menu"
+    width="80"
+    loading="lazy"
+  />
+</a>
+
+---
+
 

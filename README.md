@@ -11,7 +11,8 @@
 
 # Hidden Armour
 
-**Hidden Armour** is a lightweight Fabric mod for Minecraft 1.21.5 that gives you full control over the rendering of armor on yourself, other players, and horses.  
+**Hidden Armour** is a lightweight Fabric mod for Minecraft 1.21.5 that gives you full control over the rendering of
+armor on yourself, other players, and horses.  
 Perfect for taking clean screenshots or just enjoying your favorite skins without armour.
 
 ## Key Features
@@ -42,8 +43,8 @@ Perfect for taking clean screenshots or just enjoying your favorite skins withou
 
 ## Controls & Commands
 
-- **Toggle Armor:** `J`  
-- **Open Settings:** `U`  
+- **Toggle Armor:** `J`
+- **Open Settings:** `U`
 - Both keybinds can be remapped in **Settings → Controls**.
 
 There are also chat commands that allow the same configurations as the settings menu.
@@ -103,10 +104,6 @@ Show elytra hide status
     style="height: auto; display: block; margin: 0 auto;"
   />
 </div>
-
-
-
-
 
 ## To-Do
 

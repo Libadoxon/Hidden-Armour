@@ -1,46 +1,44 @@
 {
-	"schemaVersion": 1,
-	"id": "hiddenarmour",
-	"version": "${version}",
-	"name": "Hidden Armour",
-	"description": "Toggles whether or not armour is shown…",
-	"authors": [ "Haage" ],
-	"contact": {
-		"homepage": "https://modrinth.com/project/uEVsHluG",
-		"sources":  "https://github.com/Haage001/Hidden-Armour",
-		"issues": "https://github.com/Haage001/Hidden-Armour/issues"
-	},
-	"license": "MIT",
-	"icon":    "assets/hiddenarmour/icon.png",
-	"environment": "*",
-
-	"entrypoints": {
-		"main": [
-			"haage.hiddenarmour.Hiddenarmour"
-		],
-		"client": [
-			"haage.hiddenarmour.HiddenArmourClient"
-		],
-		"modmenu": [
-			"haage.hiddenarmour.client.HiddenArmourModMenu"
-		],
-		"fabric-datagen": [
-			"haage.hiddenarmour.HiddenarmourDataGenerator"
-		]
-	},
-
-	"mixins": [
-		"hiddenarmour.mixins.json"
-	],
-
-	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft":    "~1.21.6",
-		"java":         ">=21",
-		"fabric-api":   "*"
-	},
-
-	"suggests": {
-		"modmenu": "*"
-	}
+  "schemaVersion": 1,
+  "id": "hiddenarmour",
+  "version": "${version}",
+  "name": "Hidden Armour",
+  "description": "Toggles whether or not armour is shown…",
+  "authors": [
+    "Haage"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/project/uEVsHluG",
+    "sources": "https://github.com/Haage001/Hidden-Armour",
+    "issues": "https://github.com/Haage001/Hidden-Armour/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/hiddenarmour/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "haage.hiddenarmour.Hiddenarmour"
+    ],
+    "client": [
+      "haage.hiddenarmour.HiddenArmourClient"
+    ],
+    "modmenu": [
+      "haage.hiddenarmour.client.HiddenArmourModMenu"
+    ],
+    "fabric-datagen": [
+      "haage.hiddenarmour.HiddenarmourDataGenerator"
+    ]
+  },
+  "mixins": [
+    "hiddenarmour.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.9",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
 }

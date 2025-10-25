@@ -1,7 +1,7 @@
 package haage.hiddenarmour.mixin;
 
 import haage.hiddenarmour.config.HiddenArmourConfig;
-import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.feature.ElytraFeatureRenderer;
 import net.minecraft.client.render.entity.state.BipedEntityRenderState;
 import net.minecraft.client.render.entity.state.PlayerEntityRenderState;
@@ -15,24 +15,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ElytraFeatureRendererMixin {
     @Inject(
             method = "render(Lnet/minecraft/client/util/math/MatrixStack;"
-                    + "Lnet/minecraft/client/render/VertexConsumerProvider;"
-                    + "ILnet/minecraft/client/render/entity/state/BipedEntityRenderState;"
+                    + "Lnet/minecraft/client/render/command/OrderedRenderCommandQueue;"
+                    + "I"
+                    + "Lnet/minecraft/client/render/entity/state/BipedEntityRenderState;"
                     + "FF)V",
             at = @At("HEAD"),
             cancellable = true
     )
     private void onRenderElytra(
-            MatrixStack matrices,
-            VertexConsumerProvider vertexConsumers,
-            int light,
-            BipedEntityRenderState state,
-            float limbAngle,
-            float limbDistance,
+            MatrixStack matrixStack, OrderedRenderCommandQueue orderedRenderCommandQueue, int i, BipedEntityRenderState bipedEntityRenderState, float f, float g,
             CallbackInfo ci
     ) {
         if (HiddenArmourConfig.get().hideArmour
                 && HiddenArmourConfig.get().includeElytra
-                && state instanceof PlayerEntityRenderState) {
+                && bipedEntityRenderState instanceof PlayerEntityRenderState) {
             ci.cancel();
         }
     }

@@ -1,6 +1,6 @@
 plugins {
-	id 'fabric-loom' version '1.10-SNAPSHOT'
-	id 'maven-publish'
+    id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'maven-publish'
 }
 
 version = '1.4.1'
@@ -10,67 +10,66 @@ version = '1.4.1'
 group = project.maven_group
 
 base {
-	archivesName = project.archives_base_name
+    archivesName = project.archives_base_name
 }
 
 repositories {
-	mavenCentral()
-	maven {
-		name = "TerraformersMC"
-		url  = uri("https://maven.terraformersmc.com/releases")
-	}
+    mavenCentral()
+    maven {
+        name = "TerraformersMC"
+        url = uri("https://maven.terraformersmc.com/releases")
+    }
 }
 
 fabricApi {
-	configureDataGeneration {
-		client = true
-	}
+    configureDataGeneration {
+        client = true
+    }
 }
 
 dependencies {
-	minecraft         "com.mojang:minecraft:${project.minecraft_version}"
-	mappings          "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modCompileOnly    "com.terraformersmc:modmenu:5.0.2"     // <-- compile-only
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modCompileOnly "com.terraformersmc:modmenu:5.0.2"     // <-- compile-only
 // Gson for config serialization
-	modImplementation "com.google.code.gson:gson:2.8.9"
+    modImplementation "com.google.code.gson:gson:2.8.9"
 }
 
 processResources {
-	inputs.property "version", project.version
+    inputs.property "version", project.version
 
-	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
-	}
+    filesMatching("fabric.mod.json") {
+        expand "version": inputs.properties.version
+    }
 
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+    it.options.release = 21
 }
 
 java {
-	withSourcesJar()
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
-	inputs.property "archivesName", project.base.archivesName
+    inputs.property "archivesName", project.base.archivesName
 
-	from("LICENSE") {
-		rename { "${it}_${inputs.properties.archivesName}" }
-	}
+    from("LICENSE") {
+        rename { "${it}_${inputs.properties.archivesName}" }
+    }
 
 }
 
 publishing {
-	publications {
-		create("mavenJava", MavenPublication) {
-			artifactId = project.archives_base_name
-			from components.java
-		}
-	}
+    publications {
+        create("mavenJava", MavenPublication) {
+            artifactId = project.archives_base_name
+            from components.java
+        }
+    }
 }
-

@@ -1,17 +1,16 @@
 {
-	"required": true,
-	"minVersion": "0.8",
-	"package": "haage.hiddenarmour.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ArmorFeatureRendererMixin",
-		"ElytraFeatureRendererMixin",
-		"SaddleFeatureRendererMixin",
-		"EntityRendererMixin",
-		"ItemRendererMixin"
-	],
-
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "minVersion": "0.8",
+  "package": "haage.hiddenarmour.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ArmorFeatureRendererMixin",
+    "ElytraFeatureRendererMixin",
+    "EntityRendererMixin",
+    "ItemRendererMixin",
+    "SaddleFeatureRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
